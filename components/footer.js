@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <footer className="mt-6 bg-white p-4  p-8 antialiased">
             <p className="mb-4 text-sm text-center text-gray-500 dark:text-gray-400 mb-0">
-                Created from <a href="https://leandro.berlin" className="hover:underline" target="_blank">Leandro</a> with &#10084; in Berlin</p>
+                Created from <Link href="https://github.com/LeandroBerlin/artemisia-ai" className="hover:underline" target="_blank">Leandro</Link> with &#10084; in Berlin</p>
             <span className="flex justify-center m-4 text-sm text-center text-gray-500 dark:text-gray-400 mb-0">
                 <Link href="https://next.js">
                     <svg className="mx-3 inline-block" height="20pt" viewBox=".5 -.2 1023 1024.1" width="20pt" xmlns="http://www.w3.org/2000/svg">
