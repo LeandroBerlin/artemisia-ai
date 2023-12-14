@@ -1,8 +1,7 @@
 ## Getting started with Next.js and Replicate
 
-This is a [Next.js](https://nextjs.org/) template project that's preconfigured to work with Replicate's API.
+This webapp was created using a [Next.js](https://nextjs.org/) template project that's preconfigured to work with [Replicate's API](replicate.com/docs/get-started/nextjs). It also use [Tailwind](https://tailwindcss.com/) utility-first CSS framwork.
 
-You can use this as a quick jumping-off point to build a web app using Replicate's API, or you can recreate this codebase from scratch by following the guide at [replicate.com/docs/get-started/nextjs](https://replicate.com/docs/get-started/nextjs)
 
 ## Noteworthy files
 
@@ -11,6 +10,12 @@ You can use this as a quick jumping-off point to build a web app using Replicate
 - [pages/api/predictions/[id].js](pages/api/predictions/[id].js) - The backend API endpoint that calls Replicate's API to get the prediction result
 
 ## Usage
+
+Clone this repository
+
+```
+
+```
 
 Install dependencies:
 
@@ -32,6 +37,6 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-For detailed instructions on how to create and use this template, see [replicate.com/docs/get-started/nextjs](https://replicate.com/docs/get-started/nextjs)
+### Screenshot
 
-<img width="707" alt="iguana" src="https://github.com/replicate/getting-started-nextjs/assets/14149230/5d1933ec-a083-4de6-90e2-7552e33e4a85">
+<img width="707" alt="iguana" src="./public/screenshot.png">
