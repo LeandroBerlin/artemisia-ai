@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Footer from "../components/footer";
+import Spinner from "../components/spinner";
+import Link from "next/link";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -8,8 +11,10 @@ export default function Home() {
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState(null);
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(null);
     const response = await fetch("/api/predictions", {
       method: "POST",
       headers: {
@@ -37,53 +42,60 @@ export default function Home() {
         setError(prediction.detail);
         return;
       }
-      console.log({ prediction });
+      //console.log({ prediction });
       setPrediction(prediction);
     }
   };
 
   return (
-    <div className="container max-w-2xl mx-auto p-5">
+    <div className="container my-10 p-6 radius shadow-2xl max-w-2xl mx-auto p-5">
       <Head>
-        <title>Replicate + Next.js</title>
+        <title>Artemisia</title>
       </Head>
 
       <h1 className="py-6 text-center font-bold text-2xl">
-        Dream something with{" "}
-        <a href="https://replicate.com/stability-ai/sdxl?utm_source=project&utm_project=getting-started">
-          SDXL
-        </a>
+        Artemisia - Generative AI art
       </h1>
+      <p className="text-md text-justify">Artemisia uses <Link href="https://replicate.com/stability-ai/sdxl">Stable Diffusion XL</Link> (SDXL), an upgraded version of Stable Diffusion generative AI model created by Stability AI. This advanced generative model allows users to generate highly detailed images using shorter text prompts compared to the original Stable Diffusion model. <Link href="https://replicate.com">
+        Replicate API
+      </Link> is used to run the model in the cloud. The name is inspired by <Link href="https://en.wikipedia.org/wiki/Artemisia_Gentileschi">Artemisia Gentileschi</Link>, an Italian Baroque painter. </p>
 
-      <form className="w-full flex" onSubmit={handleSubmit}>
+      <form className="w-full flex mt-6" onSubmit={handleSubmit}>
         <input
           type="text"
           className="flex-grow"
           name="prompt"
-          placeholder="Enter a prompt to display an image"
+          placeholder="Enter a prompt to create an image"
         />
         <button className="button" type="submit">
-          Go!
+          Create
         </button>
       </form>
 
-      {error && <div>{error}</div>}
+      {error && <p className="py-3 text-sm opacity-50"><span className="bg-white text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Error</span>
+        <span className="bg-white text-red-800 text-sm font-medium ">{error}</span>
+      </p>}
 
-      {prediction && (
+      {prediction && !error && (
         <>
+          <p className="py-3 text-sm opacity-50">
+            <div className={`${prediction.status !== "succeeded" ? "text-blue-800 border-blue-400 " : "border-green-400 text-green-800"} inline-block  text-xs font-medium me-2 px-2.5 py-0.5 rounded border`}>Status</div>
+            <div className="inline-block"><span className="capitalize">{prediction.status}</span> {prediction.status != "succeeded" ? <Spinner /> : `in ${prediction.metrics.predict_time.toFixed(2)} sec.`}</div>
+          </p>
           {prediction.output && (
-            <div className="image-wrapper mt-5">
+            <div className="image-wrapper mt-1">
               <Image
                 fill
                 src={prediction.output[prediction.output.length - 1]}
                 alt="output"
-                sizes="100vw"
+                sizes="100%"
               />
             </div>
           )}
-          <p className="py-3 text-sm opacity-50">status: {prediction.status}</p>
+
         </>
       )}
-    </div>
+      <Footer />
+    </div >
   );
 }
