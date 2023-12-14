@@ -1,11 +1,12 @@
 ## Getting started
 
-This webapp was built using a [Next.js](https://nextjs.org/) template project that's preconfigured to work with [Replicate's API](https://replicate.com/docs/get-started/nextjs) and [Tailwind](https://tailwindcss.com/) utility-first CSS framwork. It was created for educational purposes and to demonstrate the potential of AI models for content generation.
+Artemisia AI was built using a [Next.js](https://nextjs.org/) template project that's preconfigured to work with [Replicate's API](https://replicate.com/docs/get-started/nextjs) and [Tailwind](https://tailwindcss.com/) utility-first CSS framwork. It was created for educational purposes and to demonstrate the potential of AI models for content generation.
 
-Artemisia uses [Stable Diffusion XL](https://replicate.com/stability-ai/sdxl) (SDXL), an upgraded version of Stable Diffusion generative AI model created by Stability AI. This advanced generative model allows users to generate highly detailed images using shorter text prompts compared to the original Stable Diffusion model. [Replicate API](https://replicate.com) is used to run the model in the cloud. 
+Artemisia AI uses [Stable Diffusion XL](https://replicate.com/stability-ai/sdxl) (SDXL), an upgraded version of Stable Diffusion generative AI model created by Stability AI. This advanced generative model allows users to generate highly detailed images using shorter text prompts compared to the original Stable Diffusion model. [Replicate API](https://replicate.com) is used to run the model in the cloud. 
 
 The name "Artemisia" is inspired by [Artemisia Gentileschi](https://en.wikipedia.org/wiki/Artemisia_Gentileschi), an Italian Baroque painter.
 
+A demo of Artemisia AI is [deployed on Vercel](https://artemisia-ai.vercel.app/)
 
 ## Noteworthy files
 
@@ -18,7 +19,7 @@ The name "Artemisia" is inspired by [Artemisia Gentileschi](https://en.wikipedia
 Clone this repository
 
 ```
-git@github.com:LeandroBerlin/artemisia.git
+git clone git@github.com:LeandroBerlin/artemisia-ai.git
 ```
 
 Install dependencies:
