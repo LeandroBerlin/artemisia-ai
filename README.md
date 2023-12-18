@@ -6,7 +6,6 @@ Artemisia AI uses [Stable Diffusion XL](https://replicate.com/stability-ai/sdxl)
 
 The name "Artemisia" is inspired by [Artemisia Gentileschi](https://en.wikipedia.org/wiki/Artemisia_Gentileschi), an Italian Baroque painter.
 
-A demo of Artemisia AI is [deployed on Vercel](https://artemisia-ai.vercel.app/)
 
 ## Noteworthy files
 
